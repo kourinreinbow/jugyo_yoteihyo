@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>授業予定表</title>
+    <style>
+        table, th, td{
+            border:1px solid #333
+        }
+
+        table{
+            max-width:95%;
+        }
+
+        td{
+            padding:0.5em;
+            text-align:center;
+        }
+
+        span{
+            background-color:rgb(197, 225, 250);
+            margin:0px 0.25em;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>時限</th>
+                <th>月</th>
+                <th>火</th>
+                <th>水</th>
+                <th>木</th>
+                <th>金</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1限</td>
+                <td rowspan="2">ディジタル回路演習</td>
+                <td style="background-color:rgb(197, 225, 250)">インタフェースデザイン</td>
+                <td style="background-color:rgb(197, 225, 250)">法学概説Ⅰ・経済学概説Ⅰ</td>
+                <td>英語Ⅳ</td>
+                <td>応用物理Ⅱ</td>
+            </tr>
+            <tr>
+                <td>2限</td>
+                <td>日本語表現法</td>
+                <td>ディジタル回路</td>
+                <td>離散数学</td>
+                <td style="background-color:rgb(197, 225, 250)">半導体デバイス概論</td>
+                <!-- <td>内容4</td> -->
+            </tr>
+            <tr>
+                <td>3限</td>
+                <td>応用数学Ⅱ</td>
+                <td>ソフトウェア工学</td>
+                <td rowspan="2">ALH</td>
+                <td rowspan="2"> 工学実験Ⅴ</td>
+                <td>保健・体育</td>
+            </tr>
+            <tr>
+                <td>4限</td>
+                <td>情報理論</td>
+                <td>データベース</td>
+
+                
+                <td>技術者倫理・技術史</td>
+            </tr>
+        </tbody>
+
+        <p><span>　</span>は選択科目です</p>
+    </table>
+</body>
+</html>
