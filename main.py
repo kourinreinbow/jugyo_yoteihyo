@@ -35,6 +35,43 @@ f_index_html = open("./index.html", "w", encoding="utf-8")
 f_sample_css = open("./sample.css", "r", encoding="utf-8")
 f_index_css = open("./index.css", "w", encoding="utf-8")
 
+# kadai_datasを日付順に並べ替える
+changed = True
+while changed:
+    changed = False
+    for index in range(len(kadai_datas)-1):
+        if type(kadai_datas[index][1]) == str or type(kadai_datas[index+1][1]) == str:
+            continue
+
+        temp_date:datetime.datetime = kadai_datas[index][1]
+        next_temp_date:datetime.datetime = kadai_datas[index+1][1]
+
+        # 年のみ
+        if temp_date.year > next_temp_date.year:
+            kadai_datas[index][1] = next_temp_date
+            kadai_datas[index+1][1] = temp_date
+            changed = True
+
+        # 年は同じで、月が違うとき
+        if temp_date.year == next_temp_date.year and temp_date.month > next_temp_date.month:
+            kadai_datas[index][1] = next_temp_date
+            kadai_datas[index+1][1] = temp_date
+            changed = True
+        
+        # 年と月が同じで日付が違うとき
+        if temp_date.year == next_temp_date.year and temp_date.month == next_temp_date.month and temp_date.day > next_temp_date.day:
+            kadai_datas[index][1] = next_temp_date
+            kadai_datas[index+1][1] = temp_date
+            changed = True
+
+        # 年と月と日付が同じでhourが違うとき
+        if temp_date.year == next_temp_date.year and temp_date.month == next_temp_date.month and temp_date.day == next_temp_date.day \
+            and temp_date.hour > next_temp_date.hour:
+            kadai_datas[index][1] = next_temp_date
+            kadai_datas[index+1][1] = temp_date
+            changed = True
+
+# 書き込むhtmlを生成する
 write_html = ""
 for index, kadai_data in enumerate(kadai_datas):
     date:datetime.datetime = kadai_data[1]
