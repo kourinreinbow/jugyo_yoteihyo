@@ -8,6 +8,10 @@ th, td{
     text-align: center;
 }
 
+td{
+    text-align: left;
+}
+
 table{
     border-collapse: collapse;
 }
