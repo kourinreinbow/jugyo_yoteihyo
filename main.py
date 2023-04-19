@@ -48,27 +48,31 @@ while changed:
 
         # 年のみ
         if temp_date.year > next_temp_date.year:
-            kadai_datas[index][1] = next_temp_date
-            kadai_datas[index+1][1] = temp_date
+            temp = kadai_datas[index+1]
+            kadai_datas[index+1] = kadai_datas[index]
+            kadai_datas[index] = temp
             changed = True
 
         # 年は同じで、月が違うとき
         if temp_date.year == next_temp_date.year and temp_date.month > next_temp_date.month:
-            kadai_datas[index][1] = next_temp_date
-            kadai_datas[index+1][1] = temp_date
+            temp = kadai_datas[index+1]
+            kadai_datas[index+1] = kadai_datas[index]
+            kadai_datas[index] = temp
             changed = True
         
         # 年と月が同じで日付が違うとき
         if temp_date.year == next_temp_date.year and temp_date.month == next_temp_date.month and temp_date.day > next_temp_date.day:
-            kadai_datas[index][1] = next_temp_date
-            kadai_datas[index+1][1] = temp_date
+            temp = kadai_datas[index+1]
+            kadai_datas[index+1] = kadai_datas[index]
+            kadai_datas[index] = temp
             changed = True
 
         # 年と月と日付が同じでhourが違うとき
         if temp_date.year == next_temp_date.year and temp_date.month == next_temp_date.month and temp_date.day == next_temp_date.day \
             and temp_date.hour > next_temp_date.hour:
-            kadai_datas[index][1] = next_temp_date
-            kadai_datas[index+1][1] = temp_date
+            temp = kadai_datas[index+1]
+            kadai_datas[index+1] = kadai_datas[index]
+            kadai_datas[index] = temp
             changed = True
 
 # 書き込むhtmlを生成する
