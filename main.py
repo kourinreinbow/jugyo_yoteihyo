@@ -2,7 +2,7 @@ import datetime
 
 kadai_datas = \
 [
- ["ディジタル回路演習：レポート", datetime.datetime(2023,5,1,0,0)],
+ ["ディジタル回路演習：レポート2", datetime.datetime(2023,5,1,0,0)],
  ["応用数学Ⅱ：課題01", datetime.datetime(2023,4,23,23,59)],
  ["応用数学Ⅱ：課題02", datetime.datetime(2023,4,23,23,59)],
  ["情報理論：第1章,章末問題", datetime.datetime(2023,5,8)],
