@@ -8,7 +8,7 @@ kadai_datas = \
  ["情報理論：第1章,章末問題", datetime.datetime(2023,5,8)],
  ["ソフトウェア工学：PERT図", datetime.datetime(2023,4,25,13,0)],
  [" データベース：第２回課題", datetime.datetime(2023,4,25)],
- ["工学実験Ⅴ：第１回分", datetime.datetime(2023,4,20,8,40)],
+ ["工学実験Ⅴ：第２回分", datetime.datetime(2023,4,27,8,40)],
  ["応用物理Ⅱ：プリント課題", "次回の授業まで"]
  ]
 
