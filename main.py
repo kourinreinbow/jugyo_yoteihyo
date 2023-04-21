@@ -24,8 +24,8 @@ template_html = \
 """
 <tr>
     <th>{}</th>
-    <td>{}/{:02d}/{:02d}/{:02d}:{:02d}</td>
     <td>{}</td>
+    <td>{}/{:02d}/{:02d}/{:02d}:{:02d}</td>
     <!--<td><form method="GET"><input type="checkbox" name="kadai{}">　<input type="submit" value="変更"></form></td>-->
 </tr>
 """
