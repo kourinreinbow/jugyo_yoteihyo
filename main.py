@@ -2,14 +2,14 @@ import datetime
 
 kadai_datas = \
 [
- ["ディジタル回路演習：レポート2", datetime.datetime(2023,5,1,0,0)],
- ["応用数学Ⅱ：課題01", datetime.datetime(2023,4,23,23,59)],
- ["応用数学Ⅱ：課題02", datetime.datetime(2023,4,23,23,59)],
- ["情報理論：第1章,章末問題", datetime.datetime(2023,5,8)],
- ["ソフトウェア工学：PERT図", datetime.datetime(2023,4,25,13,0)],
- [" データベース：第２回課題", datetime.datetime(2023,4,25)],
- ["工学実験Ⅴ：第２回分", datetime.datetime(2023,4,27,8,40)],
- ["応用物理Ⅱ：<ul> \
+ ["ディジタル回路演習","レポート2", datetime.datetime(2023,5,1,0,0)],
+ ["応用数学Ⅱ","課題01", datetime.datetime(2023,4,23,23,59)],
+ ["応用数学Ⅱ","課題02", datetime.datetime(2023,4,23,23,59)],
+ ["情報理論","第1章,章末問題", datetime.datetime(2023,5,8)],
+ ["ソフトウェア工学","PERT図", datetime.datetime(2023,4,25,13,0)],
+ [" データベース","第２回課題", datetime.datetime(2023,4,25)],
+ ["工学実験Ⅴ","第２回分", datetime.datetime(2023,4,27,8,40)],
+ ["応用物理Ⅱ","<ul> \
   <li>P.13 第1章 問1</li> \
   <li>P.13 第1章 問2</li> \
   <li>P.22 第1章 演習問題1 A-5</li> \
@@ -25,6 +25,7 @@ template_html = \
 <tr>
     <th>{}</th>
     <td>{}/{:02d}/{:02d}/{:02d}:{:02d}</td>
+    <td>{}</td>
     <!--<td><form method="GET"><input type="checkbox" name="kadai{}">　<input type="submit" value="変更"></form></td>-->
 </tr>
 """
@@ -33,6 +34,7 @@ template_html_jikaiVer = \
 """
 <tr>
     <th>{}</th>
+    <td>{}</td>
     <td>{}</td>
     <!--<td><form method="GET"><input type="checkbox" name="kadai{}">　<input type="submit" value="変更"></form></td>-->
 </tr>
@@ -48,11 +50,11 @@ changed = True
 while changed:
     changed = False
     for index in range(len(kadai_datas)-1):
-        if type(kadai_datas[index][1]) == str or type(kadai_datas[index+1][1]) == str:
+        if type(kadai_datas[index][2]) == str or type(kadai_datas[index+1][2]) == str:
             continue
 
-        temp_date:datetime.datetime = kadai_datas[index][1]
-        next_temp_date:datetime.datetime = kadai_datas[index+1][1]
+        temp_date:datetime.datetime = kadai_datas[index][2]
+        next_temp_date:datetime.datetime = kadai_datas[index+1][2]
 
         # 年のみ
         if temp_date.year > next_temp_date.year:
@@ -86,11 +88,11 @@ while changed:
 # 書き込むhtmlを生成する
 write_html = ""
 for index, kadai_data in enumerate(kadai_datas):
-    date:datetime.datetime = kadai_data[1]
+    date:datetime.datetime = kadai_data[2]
     if type(date) == str:
-        write_html += template_html_jikaiVer.format(kadai_data[0], date, index)
+        write_html += template_html_jikaiVer.format(kadai_data[0], kadai_data[1], date, index)
     else:
-        write_html += template_html.format(kadai_data[0], date.year, date.month, date.day, date.hour, date.minute, index)
+        write_html += template_html.format(kadai_data[0], kadai_data[1], date.year, date.month, date.day, date.hour, date.minute, index)
 
 # テンプレートのデータを読み込む
 f_sample_html_data = f_sample_html.read()
