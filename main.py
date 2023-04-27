@@ -6,12 +6,12 @@ kadai_datas = \
  ["ディジタル回路演習","レポート3", datetime.datetime(2023,5,1,0,0)],
 
  ["情報理論","第1章,章末問題", datetime.datetime(2023,5,8)],
- ["工学実験Ⅴ","第２回分", datetime.datetime(2023,4,27,8,40)],
  ["応用数学Ⅱ", "課題03", datetime.datetime(2023,4,30,23,59)],
  ["データベース","第３回課題", datetime.datetime(2023,5,2)],
  ["ソフトウェア工学","レポート2", datetime.datetime(2023,5,2,13,0)],
-
  ["ディジタル回路","第3回課題", datetime.datetime(2023,5,10)],
+
+ ["工学実験Ⅴ","第３回分", datetime.datetime(2023,5,11,8,40)],
 
  ["応用物理Ⅱ","<ul> \
   <li>P.13 第1章 問1</li> \
