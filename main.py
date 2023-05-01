@@ -8,7 +8,7 @@ kadai_datas = \
  ["ディジタル回路","第3回課題", datetime.datetime(2023,5,10)],
  ["工学実験Ⅴ","第３回分", datetime.datetime(2023,5,11,8,40)],
  
- ["応用数学Ⅱ", "課題03", datetime.datetime(2023,5,8)],
+ ["応用数学Ⅱ", "課題04", datetime.datetime(2023,5,8)],
  ["ディジタル回路演習","レポート4", datetime.datetime(2023,5,8)],
 
  ["応用物理Ⅱ","プリント課題", "次回の授業まで"]
