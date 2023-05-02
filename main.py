@@ -79,14 +79,23 @@ while changed:
             kadai_datas[index] = temp
             changed = True
 
+min_date = kadai_datas[0][2].day
+min_month = kadai_datas[0][2].month
+
 # 書き込むhtmlを生成する
 write_html = ""
 for index, kadai_data in enumerate(kadai_datas):
     date:datetime.datetime = kadai_data[2]
+    star = "<img src='./svg-sample.svg' width='15px' height='15px'>"
+    temp_str = ""
+    
     if type(date) == str:
         write_html += template_html_jikaiVer.format(kadai_data[0], kadai_data[1], date, index)
     else:
-        write_html += template_html.format(kadai_data[0], kadai_data[1], date.year, date.month, date.day, date.hour, date.minute, index)
+        if date.month == min_month and date.day == min_date:
+            temp_str = star
+            # print(date.month, date.day)
+        write_html += template_html.format(temp_str + kadai_data[0], kadai_data[1], date.year, date.month, date.day, date.hour, date.minute, index)
 
 # テンプレートのデータを読み込む
 f_sample_html_data = f_sample_html.read()
