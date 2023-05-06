@@ -42,7 +42,7 @@ template_html = \
     <th>{}</th>
     <td>{}</td>
     <td>{}/{:02d}/{:02d}/{:02d}:{:02d}</td>
-    <td><input type="checkbox" class="subject_exist_keys" id="{}">　<input type="button" value="変更" onclick="change_checkbox(\'{}\')" disabled="disabled"></td>
+    <td><input type="checkbox" class="subject_exist_keys" id="{}" disabled="disabled">　<input type="button" value="変更" onclick="change_checkbox(\'{}\')"></td>
 </tr>
 """
 
@@ -52,7 +52,7 @@ template_html_jikaiVer = \
     <th>{}</th>
     <td>{}</td>
     <td>{}</td>
-    <td><input type="checkbox" class="subject_exist_keys" id="{}">　<input type="button" value="変更" onclick="change_checkbox(\'{}\')" disabled="disabled"></td>
+    <td><input type="checkbox" class="subject_exist_keys" id="{}" disabled="disabled">　<input type="button" value="変更" onclick="change_checkbox(\'{}\')"></td>
 </tr>
 """
 
