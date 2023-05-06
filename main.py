@@ -2,17 +2,39 @@ import datetime
 
 kadai_datas = \
 [
- ["情報理論","第1章,章末問題", datetime.datetime(2023,5,8)],
- ["ディジタル回路","第3回課題", datetime.datetime(2023,5,10)],
- ["工学実験Ⅴ","第３回分 (※Teams)", datetime.datetime(2023,5,11,8,40)],
- ["応用数学Ⅱ", "課題04", datetime.datetime(2023,5,8)],
- ["ディジタル回路演習","レポート4", datetime.datetime(2023,5,8)],
+ ["情報理論","第1章,章末問題1", datetime.datetime(2023,5,8)],
+ ["ディジタル回路","第3回課題1", datetime.datetime(2023,5,10)],
+ ["工学実験Ⅴ","第３回分 (※Teams)1", datetime.datetime(2023,5,11,8,40)],
+ ["応用数学Ⅱ", "課題041", datetime.datetime(2023,5,8)],
+ ["ディジタル回路演習","レポート41", datetime.datetime(2023,5,8)],
  
- ["ソフトウェア工学","レポート3 (※Teams)", datetime.datetime(2023,5,9,13,0)],
- ["データベース","第4回課題", datetime.datetime(2023,5,9)],
+ ["ソフトウェア工学","レポート3 (※Teams)1", datetime.datetime(2023,5,9,13,0)],
+ ["データベース","第4回課題1", datetime.datetime(2023,5,9)],
 
- ["応用物理Ⅱ","プリント課題", "次回の授業まで"]
+ ["応用物理Ⅱ","プリント課題1", "次回の授業まで"]
  ]
+
+subject_ja2en = \
+{"日本語表現法":"nihongo-hyogenhou",
+ "技術者倫理":"gijutusya-rinri",
+ "保健・体育":"hoken-taiiku",
+ "英語Ⅳ":"eigo-4",
+ "応用数学Ⅰ":"ouyou-sugaku-1",
+ "応用数学Ⅱ":"ouyou-sugaku-2",
+ "応用数学Ⅲ":"ouyou-sugaku-3",
+ "応用物理Ⅱ":"ouyou-buturi-2",
+ "ディジタル回路":"dhijitaru-kairo",
+ "ディジタル回路演習":"dhijitaru-kairo-ensyu",
+ "離散数学":"risan-sugaku",
+ "情報理論":"joho-riron",
+ "ソフトウェア工学":"sohutowea-kougaku",
+ "データベース":"database",
+ "符号理論":"hugo-riron",
+ "コンピュータアーキテクチャ":"computer-akitekutya",
+ "情報数学":"joho-sugaku",
+ "アルゴリズムとデータ構造":"arugorizumu-and-detakouzou",
+ "工学実験Ⅴ":"kogaku-jikken-5",
+ "工学実験Ⅵ":"kogaku-jikken-6"}
 
 template_html = \
 """
@@ -20,7 +42,7 @@ template_html = \
     <th>{}</th>
     <td>{}</td>
     <td>{}/{:02d}/{:02d}/{:02d}:{:02d}</td>
-    <!--<td><form method="GET"><input type="checkbox" name="kadai{}">　<input type="submit" value="変更"></form></td>-->
+    <td><input type="checkbox" class="subject_exist_keys" id="{}">　<input type="button" value="変更" onclick="change_checkbox(\'{}\')"></td>
 </tr>
 """
 
@@ -30,12 +52,12 @@ template_html_jikaiVer = \
     <th>{}</th>
     <td>{}</td>
     <td>{}</td>
-    <!--<td><form method="GET"><input type="checkbox" name="kadai{}">　<input type="submit" value="変更"></form></td>-->
+    <td><input type="checkbox" class="subject_exist_keys" id="{}">　<input type="button" value="変更" onclick="change_checkbox(\'{}\')"></td>
 </tr>
 """
 
 f_sample_html = open("./sample.html", "r", encoding="utf-8")
-f_index_html = open("./index.html", "w", encoding="utf-8")
+f_index_html = open("./indexβ.html", "w", encoding="utf-8")
 f_sample_css = open("./sample.css", "r", encoding="utf-8")
 f_index_css = open("./index.css", "w", encoding="utf-8")
 
@@ -90,12 +112,12 @@ for index, kadai_data in enumerate(kadai_datas):
     temp_str = ""
     
     if type(date) == str:
-        write_html += template_html_jikaiVer.format(kadai_data[0], kadai_data[1], date, index)
+        write_html += template_html_jikaiVer.format(kadai_data[0], kadai_data[1][:-1], date, subject_ja2en[kadai_data[0]]+"_"+kadai_data[1][-1], subject_ja2en[kadai_data[0]]+"_"+kadai_data[1][-1])
     else:
         if date.month == min_month and date.day == min_date:
             temp_str = star
             # print(date.month, date.day)
-        write_html += template_html.format(temp_str + kadai_data[0], kadai_data[1], date.year, date.month, date.day, date.hour, date.minute, index)
+        write_html += template_html.format(temp_str + kadai_data[0], kadai_data[1][:-1], date.year, date.month, date.day, date.hour, date.minute, subject_ja2en[kadai_data[0]]+"_"+kadai_data[1][-1], subject_ja2en[kadai_data[0]]+"_"+kadai_data[1][-1])
 
 # テンプレートのデータを読み込む
 f_sample_html_data = f_sample_html.read()
