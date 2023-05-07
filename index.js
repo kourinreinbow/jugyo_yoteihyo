@@ -84,3 +84,14 @@ for(let i=0; i<subject_exist_elements.length; i++){
         element.checked = setValue;
     }
 }
+
+// localStrageに存在し、実際の課題としては出ていない場合は削除する。
+for(key in localStorage)
+{
+    if (localStorage.hasOwnProperty(key)){
+        if(subject_exist_keys.indexOf(key) == -1)
+        {
+            removeData(key);
+        }
+    }
+}
