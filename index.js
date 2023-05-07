@@ -75,11 +75,11 @@ for(let i=0; i<subject_exist_elements.length; i++){
         if(gottenData == "true")
         {
             setValue = true;
-            emement_pearent.style.backgroundColor = "#FF0000";
+            emement_pearent.style.backgroundColor = finished_color;
         }
         else
         {
-            emement_pearent.style.backgroundColor = "#FFFFFF";
+            emement_pearent.style.backgroundColor = unfinished_color;
         }
         element.checked = setValue;
     }
