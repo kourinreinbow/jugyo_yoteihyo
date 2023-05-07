@@ -1,5 +1,7 @@
-// としさん
 const datas = localStorage;
+
+const finished_color = "#FF0000";
+const unfinished_color = "#FFFFFF";
 
 function saveData(name, value) {
     datas.setItem(name, value);
@@ -31,13 +33,23 @@ function string_to_list(string)
 {
     return string.split(",");
 }
-// としさん ここまで
 
 function change_checkbox(key)
 {
     let element = document.getElementById(key);
+    let emement_pearent = element.parentNode.parentNode;
     element.checked = !element.checked;
+    if(element.checked)
+    {
+        emement_pearent.style.backgroundColor = "#FF0000";
+    }
+    else
+    {
+        emement_pearent.style.backgroundColor = "#FFFFFF";
+    }
+
     saveData(key, element.checked);
+
 }
 
 // subject_exist_keys が、実際に出ている宿題のkey。
@@ -57,10 +69,17 @@ for(let i=0; i<subject_exist_elements.length; i++){
     {
         // 登録されている and checkedの場合は、idを検索し、checkedに変える。
         let element = document.getElementById(key);
+        let emement_pearent = element.parentNode.parentNode;
+
         let setValue = false;
         if(gottenData == "true")
         {
             setValue = true;
+            emement_pearent.style.backgroundColor = "#FF0000";
+        }
+        else
+        {
+            emement_pearent.style.backgroundColor = "#FFFFFF";
         }
         element.checked = setValue;
     }

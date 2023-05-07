@@ -57,7 +57,7 @@ template_html_jikaiVer = \
 """
 
 f_sample_html = open("./sample.html", "r", encoding="utf-8")
-f_index_html = open("./indexβ.html", "w", encoding="utf-8")
+f_index_html = open("./index.html", "w", encoding="utf-8")
 f_sample_css = open("./sample.css", "r", encoding="utf-8")
 f_index_css = open("./index.css", "w", encoding="utf-8")
 
