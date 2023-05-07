@@ -41,11 +41,11 @@ function change_checkbox(key)
     element.checked = !element.checked;
     if(element.checked)
     {
-        emement_pearent.style.backgroundColor = "#FF0000";
+        emement_pearent.style.backgroundColor = finished_color;
     }
     else
     {
-        emement_pearent.style.backgroundColor = "#FFFFFF";
+        emement_pearent.style.backgroundColor = unfinished_color;
     }
 
     saveData(key, element.checked);
