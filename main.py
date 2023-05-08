@@ -7,7 +7,7 @@ kadai_datas = \
  ["ソフトウェア工学","レポート3 (※Teams)1", datetime.datetime(2023,5,9,13,0)],
  ["データベース","第4回課題1", datetime.datetime(2023,5,9)],
 
- ["応用数学Ⅱ", "課題051", datetime.datetime(2023,5,15)],
+ ["応用数学Ⅱ", "課題052", datetime.datetime(2023,5,15)],
 
  ["応用物理Ⅱ","プリント課題1", "次回の授業まで"]
  ]
