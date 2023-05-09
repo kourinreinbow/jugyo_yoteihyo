@@ -7,7 +7,7 @@ kadai_datas = \
  ["応用数学Ⅱ", "課題052", datetime.datetime(2023,5,15)],
  
  # 追加部分
- ["ソフトウェア工学","レポート4 (※Teams)1", datetime.datetime(2023,5,23,13,0)],
+ ["ソフトウェア工学","レポート4 (※Teams)2", datetime.datetime(2023,5,23,13,0)],
  ["データベース","第5回課題2", datetime.datetime(2023,5,23)],
 
  # 次回の授業まで
