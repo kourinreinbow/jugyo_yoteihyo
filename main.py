@@ -2,13 +2,12 @@ import datetime
 
 kadai_datas = \
 [
- ["ディジタル回路","第3回課題1", datetime.datetime(2023,5,10)],
  ["工学実験Ⅴ","第３回分1", datetime.datetime(2023,5,11,8,40)], 
  ["応用数学Ⅱ", "課題052", datetime.datetime(2023,5,15)],
- 
- # 追加部分
  ["ソフトウェア工学","レポート4 (※Teams)2", datetime.datetime(2023,5,23,13,0)],
  ["データベース","第5回課題2", datetime.datetime(2023,5,23)],
+ 
+ # 追加部分
 
  # 次回の授業まで
  ["応用物理Ⅱ","プリント課題1", "次回の授業まで"]
